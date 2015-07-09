@@ -32,7 +32,7 @@
 
 		<!-- other -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.8</jdk.version>
+		<jdk.version>1.7</jdk.version>
 	</properties>
 
 	<!-- 设定仓库 -->
@@ -233,27 +233,14 @@
 
 		<!-- logging begin -->
 		<dependency>
+			<artifactId>slf4j-log4j12</artifactId>
+			<groupId>org.slf4j</groupId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- 代码直接调用log4j会被桥接到slf4j -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 		<!-- 代码直接调用common-logging会被桥接到slf4j -->
 		<dependency>
@@ -315,9 +302,9 @@
 
 		<!-- 解析客户端操作系统、浏览器等 -->
 		<dependency>
-			<groupId>bitwalker</groupId>
+			<groupId>eu.bitwalker</groupId>
 			<artifactId>UserAgentUtils</artifactId>
-			<version>1.9</version>
+			<version>1.15</version>
 		</dependency>
 		<!-- poi -->
 		<dependency>

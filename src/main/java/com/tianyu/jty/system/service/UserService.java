@@ -82,11 +82,18 @@ public class UserService extends BaseService<User, Integer> {
 	private boolean isSupervisor(Integer id) {
 		return id == 1;
 	}
-	
+	public static void main(String[] args) {
+        User u=new User();
+        u.setPlainPassword("123456");
+        UserService.entryptPassword(u);
+        System.out.println(u.getPassword());
+        System.out.println(u.getSalt());
+        
+    }
 	/**
 	 * 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash
 	 */
-	private void entryptPassword(User user) {
+	private  static void entryptPassword(User user) {
 		byte[] salt = Digests.generateSalt(SALT_SIZE);
 		user.setSalt(Encodes.encodeHex(salt));
 

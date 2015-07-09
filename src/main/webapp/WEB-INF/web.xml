@@ -124,7 +124,7 @@
 	
 	<!-- session过期时间 -->
 	<session-config>
-		<session-timeout>20</session-timeout>
+		<session-timeout>2000</session-timeout>
 	</session-config>
 
 	<!-- 错误页面设置 -->
